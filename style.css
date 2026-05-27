@@ -1,0 +1,173 @@
+
+   :root {
+    --bg-color: #fafafa;         
+    --text-primary: #111111;     
+    --text-muted: #767676;       
+    --border-color: #e5e5e5;     
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    padding: 0 4%; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* scales with the screen width */
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    max-width: 42rem; /* Prevents text lines from getting too wide, for better lecture */
+}
+
+p strong {
+    font-weight: 600;
+}
+
+.site-header {
+    padding: 10rem 0 6rem 0;
+    border-bottom: 1px solid var(--text-primary); 
+}
+
+.intro-badge {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sub-headline {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    max-width: 35rem;
+}
+
+/* Asymmetric Grid Rows */
+.hub-row {
+    display: grid;
+    grid-template-columns: 1fr; 
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.row-meta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.cta-link {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.cta-link span {
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.cta-link:hover span {
+    transform: translateX(6px); 
+}
+
+.site-footer {
+    padding: 8rem 0 4rem 0;
+}
+
+.footer-cta {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-links a {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+/* here we have the minimalist underline hover effect */
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--text-primary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+    .hub-row {
+        grid-template-columns: 1fr 3fr; /* Matches the editorial layout split */
+        gap: 4rem;
+    }
+    
+    .row-meta {
+        margin-bottom: 0;
+        padding-top: 0.5rem;
+    }
+}
