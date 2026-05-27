@@ -1,22 +1,33 @@
 ---
 layout: default
 title: Accreditations
-description: Verifiable digital ledger of academic milestones.
 ---
-<main class="hub-container">
-    <section class="hub-row">
-        <div class="row-meta">CREDENTIALS</div>
-        <div class="row-content">
-            <h2>Accreditations & Milestones</h2>
-            <ul style="list-style: none; padding-top: 2rem;">
-                
-                <li style="margin-bottom: 3rem;">
-                    <strong>Advanced Linear Algebra & Discrete Mathematics</strong>
-                    <p style="font-size: 1rem; color: var(--text-muted);">Issued by Universidad Católica San Pablo (UCSP). Verified course mastery regarding multi-dimensional coordinate spaces and relational structures.</p>
-                    <a href="/blog/linear-algebra-completion/" class="cta-link">Read the course breakdown & verification <span>☞</span></a>
-                </li>
 
-            </ul>
+<div class="page-container">
+  <header class="section-hero">
+    <span class="section-taxonomy">03 / VALIDATION</span>
+    <h1 class="page-main-title">Accreditations & Milestones</h1>
+    <p class="page-subtitle">A verifiable digital ledger of my university coursework, technical certifications, and formal language proficiencies.</p>
+  </header>
+
+  <div class="accreditations-timeline">
+    {% for cert in site.data.accreditations %}
+      <article class="accreditation-item">
+        <div class="item-meta">
+          <span class="meta-year">{{ cert.year }}</span>
+          <span class="meta-separator">|</span>
+          <span class="meta-issuer">{{ cert.issuer }}</span>
         </div>
-    </section>
-</main>
+        
+        <h2 class="item-title">{{ cert.title }}</h2>
+        <p class="item-description">{{ cert.description }}</p>
+        
+        {% if cert.url != "#" %}
+          <a href="{{ cert.url }}" target="_blank" rel="noopener noreferrer" class="text-action-link">
+            Verify Credential <span class="arrow">→</span>
+          </a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</div>

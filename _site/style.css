@@ -169,3 +169,109 @@ p strong {
         padding-top: 0.5rem;
     }
 }
+
+/* --- Navegación Global --- */
+.global-header {
+    padding: 2rem 0;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 3rem;
+  }
+  .header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    font-weight: 700;
+    text-decoration: none;
+    color: #111111;
+  }
+  .global-nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #666666;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+  .global-nav a:hover, .global-nav a.active {
+    color: #111111;
+    font-weight: 500;
+  }
+  
+  /* --- Layout de Acreditaciones --- */
+  .page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .section-taxonomy {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: #888888;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .page-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+  }
+  .page-subtitle {
+    color: #555555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 4rem;
+  }
+  
+  /* --- Elementos de la Línea de Tiempo --- */
+  .accreditations-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .accreditation-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 2rem;
+  }
+  .accreditation-item:last-child {
+    border-bottom: none;
+  }
+  .item-meta {
+    font-size: 0.85rem;
+    color: #777777;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .meta-separator {
+    margin: 0 0.4rem;
+    color: #cccccc;
+  }
+  .item-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #111111;
+    margin: 0 0 0.5rem 0;
+  }
+  .item-description {
+    color: #444444;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+  }
+  .text-action-link {
+    font-size: 0.9rem;
+    color: #111111;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .text-action-link:hover .arrow {
+    transform: translateX(4px);
+  }
+  .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }

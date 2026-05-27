@@ -36,14 +36,17 @@
     </script> 
 </head>
 <body>
-
-    <header class="site-header">
-        <div class="intro-badge">Hi, I'm Gabriel Fabrizio Flores Llancaya—</div>
-        <h1>Artificial Intelligence Student & Software Developer.</h1>
-        <p class="sub-headline">Bridging mathematical frameworks with scalable software solutions.</p>
-
-    </header>
-
+    <header class="global-header">
+        <div class="header-container">
+          <a href="{{ '/' | relative_url }}" class="logo-link">GFFL</a>
+          
+          <nav class="global-nav">
+            <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+            <a href="{{ '/blog/' | relative_url }}" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a>
+            <a href="{{ '/acreditaciones/' | relative_url }}" class="{% if page.url contains '/acreditaciones' %}active{% endif %}">Accreditations</a>
+          </nav>
+        </div>
+      </header>
     {{ content }}
 
     <footer class="site-footer">
